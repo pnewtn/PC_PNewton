@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Receitas Moderna</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #4a4a4a 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #ffa3a3);
+            border-radius: 3px;
+        }
+        
+        .recipe-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .recipe {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .recipe:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .recipe-title {
+            color: #ffa3a3;
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+        
+        .ingredients, .instructions {
+            margin-top: 20px;
+        }
+        
+        .ingredients h3, .instructions h3 {
+            color: #ffa3a3;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ingredients h3:before, .instructions h3:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        ul, ol {
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        ul li:before {
+            content: '•';
+            color: #ff6b6b;
+            position: absolute;
+            left: 0;
+        }
+        
+        ol {
+            counter-reset: step-counter;
+        }
+        
+        ol li {
+            counter-increment: step-counter;
+        }
+        
+        ol li:before {
+            content: counter(step-counter);
+            color: #ff6b6b;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .recipe-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .recipe-img:hover {
+            transform: scale(1.02);
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-container {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Receitas Premium</h1>
+    
+    <div class="recipe-container">
+        <div class="recipe">
+            <h2 class="recipe-title">Bolo de Chocolate Gourmet</h2>
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bolo de Chocolate" class="recipe-img">
+            
+            <div class="ingredients">
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>200g de chocolate 70% cacau</li>
+                    <li>200g de manteiga sem sal</li>
+                    <li>4 ovos grandes</li>
+                    <li>150g de açúcar refinado</li>
+                    <li>80g de farinha de trigo</li>
+                    <li>1 pitada de sal</li>
+                    <li>1 colher de chá de extrato de baunilha</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <h3>Modo de Preparo:</h3>
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C. Unte uma forma de 20cm.</li>
+                    <li>Derreta o chocolate e a manteiga em banho-maria.</li>
+                    <li>Bata os ovos com o açúcar até obter um creme claro e fofo.</li>
+                    <li>Incorpore delicadamente o chocolate derretido à mistura de ovos.</li>
+                    <li>Peneire a farinha e o sal sobre a mistura e dobre cuidadosamente.</li>
+                    <li>Adicione a baunilha e despeje na forma preparada.</li>
+                    <li>Asse por 20-25 minutos até que as bordas estejam firmes mas o centro ainda levemente mole.</li>
+                    <li>Deixe esfriar antes de servir.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="recipe">
+            <h2 class="recipe-title">Risoto de Cogumelos Trufado</h2>
+            <img src="https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Risoto de Cogumelos" class="recipe-img">
+            
+            <div class="ingredients">
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>300g de arroz arbóreo</li>
+                    <li>200g de cogumelos variados</li>
+                    <li>1 cebola média picada</li>
+                    <li>2 dentes de alho picados</li>
+                    <li>1 litro de caldo de legumes</li>
+                    <li>100ml de vinho branco seco</li>
+                    <li>50g de manteiga</li>
+                    <li>50g de queijo parmesão ralado</li>
+                    <li>1 colher de sopa de azeite trufado</li>
+                    <li>Salsinha picada a gosto</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <h3>Modo de Preparo:</h3>
+                <ol>
+                    <li>Aqueça o caldo de legumes e mantenha em fogo baixo.</li>
+                    <li>Em uma panela larga, refogue a cebola e o alho no azeite até ficarem translúcidos.</li>
+                    <li>Adicione os cogumelos e cozinhe até liberarem seus líquidos.</li>
+                    <li>Junte o arroz arbóreo e mexa por 1-2 minutos até ficar levemente transparente.</li>
+                    <li>Acrescente o vinho branco e mexa até evaporar.</li>
+                    <li>Comece a adicionar o caldo quente, uma concha de cada vez, mexendo sempre.</li>
+                    <li>Continue até que o arroz esteja al dente (cerca de 18 minutos).</li>
+                    <li>Retire do fogo e misture a manteiga, o parmesão e o azeite trufado.</li>
+                    <li>Finalize com salsinha picada e sirva imediatamente.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="recipe">
+            <h2 class="recipe-title">Salmão Grelhado com Crosta de Ervas</h2>
+            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Salmão Grelhado" class="recipe-img">
+            
+            <div class="ingredients">
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>4 filés de salmão (cerca de 150g cada)</li>
+                    <li>1 xícara de ervas frescas (salsinha, endro, cebolinha)</li>
+                    <li>2 colheres de sopa de mostarda Dijon</li>
+                    <li>2 colheres de sopa de azeite de oliva</li>
+                    <li>Raspas de 1 limão</li>
+                    <li>Suco de 1/2 limão</li>
+                    <li>Sal e pimenta a gosto</li>
+                    <li>1 colher de chá de mel</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <h3>Modo de Preparo:</h3>
+                <ol>
+                    <li>Pré-aqueça o forno a 200°C ou prepare a grelha.</li>
+                    <li>Em um processador, pulse as ervas com o azeite até formar uma pasta.</li>
+                    <li>Misture a mostarda, o suco de limão, as raspas e o mel à pasta de ervas.</li>
+                    <li>Tempere os filés de salmão com sal e pimenta.</li>
+                    <li>Espalhe generosamente a mistura de ervas sobre cada filé.</li>
+                    <li>Grelhe por 4-5 minutos de cada lado (ou asse por 10-12 minutos no forno).</li>
+                    <li>Sirva com legumes grelhados ou uma salada fresca.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

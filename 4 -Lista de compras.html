@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras Acessível</title>
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --accent-color: #00d9ff;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --highlight: rgba(0, 217, 255, 0.1);
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--dark-bg);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+        
+        h1 {
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .shopping-list {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            background: rgba(30, 30, 30, 0.5);
+        }
+        
+        .item-number {
+            background: var(--accent-color);
+            color: var(--darker-bg);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .item-name {
+            flex-grow: 1;
+            font-size: 16px;
+        }
+        
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .play-btn {
+            background: var(--accent-color);
+            color: var(--darker-bg);
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .play-btn i {
+            font-size: 16px;
+        }
+        
+        @media (max-width: 600px) {
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .audio-controls {
+                width: 100%;
+                margin-top: 8px;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Lista de Compras Acessível</h1>
+    
+    <div class="shopping-list">
+        <!-- Itens de 1 a 10 -->
+        <div class="item">
+            <div class="item-number">1</div>
+            <div class="item-name">Maçãs</div>
+            <div class="audio-controls">
+                <audio id="audio1" src="macas.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio1').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">2</div>
+            <div class="item-name">Pão Integral</div>
+            <div class="audio-controls">
+                <audio id="audio2" src="paointegral.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio2').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">3</div>
+            <div class="item-name">Leite Desnatado</div>
+            <div class="audio-controls">
+                <audio id="audio3" src="leitedesnatado.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio3').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <!-- Itens restantes (4 a 10) -->
+        <div class="item">
+            <div class="item-number">4</div>
+            <div class="item-name">Ovos</div>
+            <div class="audio-controls">
+                <audio id="audio4" src="ovos.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio4').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">5</div>
+            <div class="item-name">Frango</div>
+            <div class="audio-controls">
+                <audio id="audio5" src="frango.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio5').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">6</div>
+            <div class="item-name">Arroz Integral</div>
+            <div class="audio-controls">
+                <audio id="audio6" src="arrozintegral.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio6').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">7</div>
+            <div class="item-name">Feijão</div>
+            <div class="audio-controls">
+                <audio id="audio7" src="feijao.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio7').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">8</div>
+            <div class="item-name">Tomate</div>
+            <div class="audio-controls">
+                <audio id="audio8" src="tomate.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio8').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">9</div>
+            <div class="item-name">Bananas</div>
+            <div class="audio-controls">
+                <audio id="audio9" src="bananas.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio9').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="item-number">10</div>
+            <div class="item-name">Água Mineral</div>
+            <div class="audio-controls">
+                <audio id="audio10" src="aguamineral.ogg"></audio>
+                <button class="play-btn" onclick="document.getElementById('audio10').play()">
+                    <i class="fas fa-play"></i> Ouvir
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
